@@ -76,6 +76,7 @@ TC_ApplyLeave
 
 TC_Logout
     Click Element    ${BtnWelcome}
+    Wait Until Element is Visible    ${BtnLogout}
     Click Element    ${BtnLogout}
     Page Should Contain Element    ${TtlLoginPanel}
     Close Browser
