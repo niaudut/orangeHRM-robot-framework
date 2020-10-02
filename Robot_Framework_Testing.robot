@@ -28,7 +28,7 @@ ${BtnSaveAddNationalities}    id=btnSave
 ${TtlAaab}        xpath=//*[@id="resultTable"]/tbody/tr[1]/td[2]/a
 ${ChkNationalities}    name=chkSelectRow[]
 ${BtnWelcome}     id=welcome
-${BtnLogout}      xpath=//*[@id="welcome-menu"]/ul/li[2]/a
+${BtnLogout}      xpath=//*[contains(text(),'Logout')]
 ${TabMyInfo}      id=menu_pim_viewMyDetails
 ${BtnDeleteNationalities}    id=btnDelete
 ${BtnConfirmDelete}    id=dialogDeleteBtn
@@ -72,9 +72,10 @@ TC_ApplyLeave
     Select From List by Value    ${SlctDuration}    half_day
     Select From List by Label    ${SlctDurationAmPm}    Afternoon
     Click Button    ${BtnApplyLeave}
-    Close Browser
 
 TC_Logout
+    Sleep    2
+    Wait Until Element is Visible    ${BtnWelcome}
     Click Element    ${BtnWelcome}
     Wait Until Element is Visible    ${BtnLogout}
     Click Element    ${BtnLogout}
